@@ -42,4 +42,15 @@ class User:
         for user in cls.user_list:
             if user.username == username:
                 return user
+
+    @classmethod
+    def user_exist(cls,username):
+        '''
+        checks if a given user exists
+
+        '''
+
+        for contact in cls.contact_list:
+            if contact.phone_number == number:
+                return contact
         
