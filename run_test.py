@@ -13,7 +13,7 @@ class TestUser(unittest.TestCase):
         '''
         Set up method to run before each test cases.
         '''
-        self.new_user = User("BenardBett","34512177b") # create user object
+        self.new_user = User("Abigael","39248916") # create user object
         
     def tearDown(self):
         '''
@@ -27,8 +27,8 @@ class TestUser(unittest.TestCase):
         test_init test case to test if the object is initialized properly
         '''
 
-        self.assertEqual(self.new_user.username,"BenardBett")
-        self.assertEqual(self.new_user.password,"34512177b")
+        self.assertEqual(self.new_user.username,"Abigael")
+        self.assertEqual(self.new_user.password,"39248916")
        
     def test_save_user(self):
         '''
@@ -73,17 +73,17 @@ class TestCredentials(unittest.TestCase):
         '''
         Set up method to run before each test cases.
         '''
-        self.new_credential = Credential("ben","twitter", "kiplangatbett","Ben3451217")
+        self.new_credential = Credential("Aby","twitter", "abyseron","aby39248916")
             
      
     def test_init(self):
         '''
         test_init test case to test if the object is initialized properly
         '''
-        self.assertEqual(self.new_credential.name,"ben")
+        self.assertEqual(self.new_credential.name,"aby")
         self.assertEqual(self.new_credential.account,"twitter")
-        self.assertEqual(self.new_credential.username,"kiplangatbett")
-        self.assertEqual(self.new_credential.password,"Ben34512177")    
+        self.assertEqual(self.new_credential.username,"abyseron")
+        self.assertEqual(self.new_credential.password,"aby39248916")    
             
     def test_save_credential(self):
         '''
@@ -105,7 +105,7 @@ class TestCredentials(unittest.TestCase):
         objects to our credential_list
         '''
         self.new_credential.save_credential()
-        test_credential = Credential("twitter","kiplangatbett","Ben34512177") # new credential
+        test_credential = Credential("twitter","abyseron","aby39248916") # new credential
         test_credential.save_credential()
         self.assertEqual(len(Credential.credential_list),2)
         
@@ -115,7 +115,7 @@ class TestCredentials(unittest.TestCase):
             test_delete_credential to test if we can delete a credential from credential list
             '''
             self.new_credential.save_credential()
-            test_credential = Credential("twitter","kiplangatbett","Ben34512177") # new credential
+            test_credential = Credential("twitter","abyseron","aby39248916") # new credential
             test_credential.save_credential()
 
             self.new_credential.delete_credential()# Deleting a credential object
@@ -127,10 +127,10 @@ class TestCredentials(unittest.TestCase):
             test to check if we can find a credential by username and display information
             '''
             self.new_credential.save_credential()
-            test_credential = Credential("twitter","kiplangatbett","Ben34512177") # new credential
+            test_credential = Credential("twitter","abyseron","aby39248916") # new credential
             test_credential.save_credential()
 
-            found_credential = Credential.find_by_username("kiplangatbett")
+            found_credential = Credential.find_by_username("abyseron")
 
             self.assertEqual(found_credential.username,test_credential.username)   
 
@@ -140,10 +140,10 @@ class TestCredentials(unittest.TestCase):
             test to check if we can return a Boolean  if we cannot find the credential.
             '''
             self.new_credential.save_credential()
-            test_credential = Credential("twitter","kiplangatbett","Ben34512177") # new credential
+            test_credential = Credential("twitter","abyseron","aby39248916") # new credential
             test_credential.save_credential()
 
-            credential_exists = Credential.credential_exist("kiplangatbett")
+            credential_exists = Credential.credential_exist("abyseron")
 
             self.assertTrue(credential_exists)
 
