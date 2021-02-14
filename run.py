@@ -85,4 +85,22 @@ def display_credential():
     return Credential.display_credential()
 
 
-    
+def main():
+    print("Hi! welcome to an application that help you manage your credentials")
+    print("\n")
+    print('please use the following short codes to perform any task you want ca = create account,' )
+    short_code = input().lower()
+    if short_code == 'ca':
+        print('Create  your account details here')
+        print('*' * 10)
+        username = input('Enter  your Username: ')
+        while True:
+            print('use :  ep = to  enter your own password')
+            password_choice = input().lower()
+            if password_choice == 'ep':
+                password = input('Enter Password: ')
+                break
+            else:
+                print('You have entered a wrong short code. kindly try again')
+
+            
