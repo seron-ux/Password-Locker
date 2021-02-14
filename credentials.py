@@ -18,7 +18,13 @@ class Credential:
         self.password = password
 
     def save_credentials(self)
-    '''
-    method that saves credential objects into application
-    '''
-    
+        '''
+        method that saves credential objects into application
+        '''
+
+    def delete_credential(self)
+        '''
+        method deletes a saved credential from credential_list
+        '''
+
+        Credential.Credential_list.remove(self)
