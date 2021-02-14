@@ -3,7 +3,7 @@ import string
 import pyperclip
 class Credential:
         """
-        Class that generates new instances of credentials.
+    Class that generates new instances of credentials.
         """
 
         Credential_list = [] # empty credentials list
@@ -17,7 +17,7 @@ class Credential:
         self.username = username
         self.password = password
 
-     def save_credential(self):
+    def save_credential(self):
         '''
         method that saves credential objects into application
         '''
@@ -40,8 +40,8 @@ class Credential:
             if Credential.account == account:
                 return Credential
 
-     @classmethod
-     def credential_exist(cls,name):
+    @classmethod
+    def credential_exist(cls,name):
          '''
          method that checks if a credential exists from the credetial list
          Args:
@@ -54,5 +54,11 @@ class Credential:
              if credential_name == name:
                  return True
 
-         return False          
+        return False          
 
+    @classmethod
+    def display_credential(cls):
+        '''
+        method that returns the credential list
+        '''
+        return cls.credential_list
