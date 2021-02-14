@@ -101,6 +101,75 @@ def main():
                 password = input('Enter Password: ')
                 break
             else:
-                print('You have entered a wrong short code. kindly try again')
+                print('You have entered a wrong short code.  try again')
+
+                 save_user(create_user(username, password))
+        print('*' * 10)
+        print(f'Welcome {username} to Password locker.Your new account  password is <--- {password} --->')
+        print('*' * 10)
+    while True:
+        print('Use the following  short codes to manage  your credentials: \n cc = create credential, \n dc = display credentials,\n fc =     find credential  \n Dd = delete credential, \n  EX = exit application')
+        short_code = input().lower()
+        if short_code == 'cc':
+            print('Enter your new credential details')
+            print('*' * 10)
+            account = input('Account Name : ')
+            username1 = input('Username : ')
+            while True:
+                print('Use: ep =  enter  your own password?')
+                password_choice = input().lower()
+                if password_choice == 'ep':
+                    password = input('Enter password : ')
+                    break
+                else:
+                    print('You have entered a wrong  short code. kindly try again')
+                print('*' * 10)
+            save_credential(create_credential(account, username1, password,password))
+            print('*' * 10)
+            print(f'Your {account} account details has been saved in our application')
+            print('*' * 10)
+        elif short_code == 'dc':
+            if display_credential():
+                print('Your  credentials are as follows:')
+                for account in display_credential():
+                    print('-' * 10)
+                    print(f'Username: {username1} \n Password: {password}')
+                    print('-' * 10)
+            else:
+                print('*' * 10)
+                print('You have no account. Please Create a new account')
+                print('*' * 10)
+        elif short_code == 'dd':
+            print('Enter Account name to delete...')
+            name = input('Acount Name : ')
+            print('*' * 10)
+            if find_credential(name):
+                name_result = find_credential(name)
+                name_result.delete_credential()
+                print(f'Account {name} has been deleted successfully ')
+                print('*' * 10)
+            else:
+                print('Incorrect account name.kindly type the correct again')
+                print('*' * 10)
+        elif short_code == 'fc':
+            print('Enter Account Name To Search...')
+            search = input('Account Name : ')
+            print('*' * 10)
+            if find_credential(search):
+                search = find_credential(search)
+                print(f'Account Name: {search} ')
+                print('*' * 10)
+            else:
+                print(' the Credential  you are searching does not exist')
+                print('*' * 10)
+        elif short_code == 'ex':
+            print('thanks for using our password-locker to keep your credentials')
+            print('*' * 10)
+            break
+        else:
+            print(' You have entered invalid Short code. Kindly  try again!')
+            print('*' * 10)
+if __name__ == '__main__':
+    main()
 
             
