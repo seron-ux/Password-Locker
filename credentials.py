@@ -16,3 +16,9 @@ class Credential:
         self.account = account
         self.username = username
         self.password = password
+
+    def save_credentials(self)
+    '''
+    method that saves credential objects into application
+    '''
+    
