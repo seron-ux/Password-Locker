@@ -103,7 +103,7 @@ def main():
             else:
                 print('You have entered a wrong short code.  try again')
 
-                 save_user(create_user(username, password))
+                save_user(create_user(username, password))
         print('*' * 10)
         print(f'Welcome {username} to Password locker.Your new account  password is <--- {password} --->')
         print('*' * 10)
@@ -124,7 +124,7 @@ def main():
                 else:
                     print('You have entered a wrong  short code. kindly try again')
                 print('*' * 10)
-            save_credential(create_credential(account, username1, password,password))
+                save_credential(create_credential(account, username1, password,password))
             print('*' * 10)
             print(f'Your {account} account details has been saved in our application')
             print('*' * 10)

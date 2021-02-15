@@ -3,7 +3,7 @@ class User:
     Class that generates new instances of user
     """
 
-    User_list [] # Empty user list
+    User_list = [] # Empty user list
 
     def __init__(self,username, password): #method that helps us define properties for our objects.
     
@@ -14,7 +14,7 @@ class User:
         '''
         save new user to the application
         '''
-        User.user_list.append(self)
+        User.User_list.append(self)
 
     def delete_user(self):
 
@@ -27,7 +27,7 @@ class User:
         '''
         method that returns the user list
         '''
-        return cls.user_list
+        return cls.User_list
 
     @classmethod
     def find_by_username(cls,username):
@@ -39,7 +39,7 @@ class User:
             user  that matches the username.
         '''
 
-        for user in cls.user_list:
+        for user in cls.User_list:
             if user.username == username:
                 return user
 

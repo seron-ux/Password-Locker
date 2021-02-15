@@ -1,12 +1,14 @@
 import random
 import string
-import pyperclip
+# import pyperclip
 class Credential:
-        """
-    Class that generates new instances of credentials.
-        """
 
-        Credential_list = [] # empty credentials list
+
+    """
+    Class that generates new instances of credentials.
+    """
+
+    credential_list = [] # empty credentials list
 
 
     def __init__(self,account,username, password):
@@ -21,7 +23,7 @@ class Credential:
         '''
         method that saves credential objects into application
         '''
-        Credential.credential_list.append(self)
+        credential.Credential_list.append(self)
 
     def delete_credential(self):
         '''
@@ -32,7 +34,7 @@ class Credential:
 
 
     @classmethod
-    def find_credentials(cls,account):
+    def find_credential(cls,account):
         """
         method that takes in account_name and returns a credentials that matches account_name
         """
@@ -42,6 +44,7 @@ class Credential:
 
     @classmethod
     def credential_exist(cls,name):
+
          '''
          method that checks if a credential exists from the credetial list
          Args:
@@ -49,12 +52,10 @@ class Credential:
          Returns:
             Boolean: True or false depending if credential exists
          ''' 
-
          for Credential in cls.credential_list:
              if credential_name == name:
                  return True
-
-        return False          
+         return False          
 
     @classmethod
     def display_credential(cls):
